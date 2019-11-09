@@ -15,7 +15,7 @@ RUN dotnet publish -c Release -o dist
 # Build runtime image
 FROM microsoft/dotnet:2.1-aspnetcore-runtime-alpine AS runtime
 COPY --from=build /app/dist .
-ENTRYPOINT ["dotnet", "demo-netcore-2x-api.dll"]
+ENTRYPOINT ["dotnet", "SampleWebApiAspNetCore.dll"]
 
 ## Build the docker image
 # docker build . -t demo-netcore-api
